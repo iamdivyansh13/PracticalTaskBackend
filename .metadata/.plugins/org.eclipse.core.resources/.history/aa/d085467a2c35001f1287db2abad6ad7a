@@ -1,0 +1,9 @@
+package com.example.test.repository;
+
+import com.example.test.entity.InventoryItem;
+import org.springframework.*;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+
+public class InventoryRepository extends SimpleJpaRepository<T, ID>{
+
+}

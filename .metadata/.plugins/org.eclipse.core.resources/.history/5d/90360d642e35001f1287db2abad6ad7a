@@ -1,0 +1,19 @@
+package com.example.test.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.test.entity.InventoryItem;
+import com.example.test.repository.InventoryRepository;
+
+public class InventoryService {
+	
+	@Autowired
+	private InventoryRepository inventoryRepository;
+	
+	public InventoryItem createItem(InventoryItem item) {
+		
+		return inventoryRepository.save(item);
+		
+	}
+
+}

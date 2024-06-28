@@ -1,0 +1,8 @@
+package com.example.test.repository;
+
+import com.example.test.entity.InventoryItem;
+import org.springframework.*
+
+public class InventoryRepository extends jpaRepository<InventoryItem, Long>{
+
+}

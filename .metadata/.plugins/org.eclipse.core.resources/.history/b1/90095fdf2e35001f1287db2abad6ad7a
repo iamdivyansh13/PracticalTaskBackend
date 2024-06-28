@@ -1,0 +1,37 @@
+package com.example.test.service;
+
+import java.lang.StackWalker.Option;
+import java.util.OptionalLong;
+
+import org.apache.el.stream.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.test.entity.InventoryItem;
+import com.example.test.repository.InventoryRepository;
+
+public class InventoryService {
+	
+	@Autowired
+	private InventoryRepository inventoryRepository;
+	
+	public InventoryItem createItem(InventoryItem item) {
+		
+		return inventoryRepository.save(item);
+		
+	}
+	
+	public InventoryItem updateItem(Long id,InventoryItem itemDetailes) {
+		Optional<InventoryItem> optionalItem= inventoryRepository.findById(id);
+		if(optionalItem.isPresent()) {
+			InventoryItem item= optionalItem.get();
+			InventoryItem iteamDetails;
+			item.setName(iteamDetails.getCategory());
+			item.setQuantity(itemDetailes.getQuantity());
+			item.setStatus(itemDetailes.getStatus());
+			
+			return inventoryRepository.save(item);
+		}
+		return null;
+	}
+
+}
